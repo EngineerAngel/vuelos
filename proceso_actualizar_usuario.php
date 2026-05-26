@@ -23,10 +23,6 @@ if (!empty($password)) {
     if ($password !== $repetir) {
         redirigir_con_error('sistema_r_vuelo.php', 'Las contrasenas no coinciden');
     }
-    if (!validar_password($password)) {
-        redirigir_con_error('sistema_r_vuelo.php', 'El password debe tener al menos 6 caracteres');
-    }
-    $hash = password_hash($password, PASSWORD_DEFAULT);
 }
 
 $campos = array(
@@ -42,8 +38,8 @@ $campos = array(
     $email
 );
 
-if ($hash) {
-    $campos[] = $hash;
+if (!empty($password)) {
+    $campos[] = $password;
     $campos[] = $_SESSION['id_usuario'];
     $stmt = $pdo->prepare(
         'UPDATE usuarios SET nombre=?, apellido=?, calle=?, colonia=?, ciudad=?, pais=?, cp=?,

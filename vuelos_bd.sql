@@ -94,14 +94,14 @@ CREATE TABLE IF NOT EXISTS pagos (
 -- DATOS DE PRUEBA
 -- ============================================================
 
--- Usuarios (contraseñas hasheadas con bcrypt)
+-- Usuarios
 -- Login: admin    | Password: admin123
 -- Login: jperez   | Password: 123456
 -- Login: mlopez   | Password: 123456
 INSERT INTO usuarios (nombre, apellido, calle, colonia, ciudad, pais, cp, tel_casa, tel_oficina, fax, email, login, password) VALUES
-('Administrador', 'Sistema',         'Av. Reforma 100', 'Centro',      'CDMX',        'México', '06000', '5555550100', '5555550101', '', 'admin@vuelos.com',  'admin',  '$2b$10$mxSOGfodsF74sAzB0dk9re9zhUKIPgucO8lJhj9Pc94KuH1M.KEja'),
-('Juan',          'Pérez García',     'Calle Pino 25',   'Las Flores',  'Guadalajara', 'México', '44100', '3333330200', '3333330201', '', 'jperez@correo.com', 'jperez', '$2b$10$3xNn7LYWYFWYQhyvdw8UR.AmDJYA5ToQhotTNnG0nKvDEfnQYtiN2'),
-('María',         'López Hernández',  'Av. Hidalgo 88',  'Universidad', 'Monterrey',   'México', '64000', '8181810300', '8181810301', '', 'mlopez@correo.com', 'mlopez', '$2b$10$u4aiU3p7Y4N68vxCFt9lCOTljXx8VuohAWj/rByADtMfn5PrC4QF.');
+('Administrador', 'Sistema',         'Av. Reforma 100', 'Centro',      'CDMX',        'México', '06000', '5555550100', '5555550101', '', 'admin@vuelos.com',  'admin',  'admin123'),
+('Juan',          'Pérez García',     'Calle Pino 25',   'Las Flores',  'Guadalajara', 'México', '44100', '3333330200', '3333330201', '', 'jperez@correo.com', 'jperez', '123456'),
+('María',         'López Hernández',  'Av. Hidalgo 88',  'Universidad', 'Monterrey',   'México', '64000', '8181810300', '8181810301', '', 'mlopez@correo.com', 'mlopez', '123456');
 
 -- Tarjetas de los usuarios
 INSERT INTO tarjetas (id_usuario, nombre_titular, num_tarjeta, tipo, fecha_vencimiento) VALUES

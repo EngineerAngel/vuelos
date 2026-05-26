@@ -27,8 +27,6 @@ if (!validar_login_unico($login, $pdo)) {
     redirigir_con_error('registro_usuario.php', 'El login ya esta en uso, elija otro');
 }
 
-$hash = password_hash($password, PASSWORD_DEFAULT);
-
 $stmt = $pdo->prepare(
     'INSERT INTO usuarios (nombre, apellido, calle, colonia, ciudad, pais, cp, email, login, password)
      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
@@ -40,7 +38,7 @@ $stmt->execute(array(
     trim(post('ciudad')),
     trim(post('pais')),
     trim(post('cp')),
-    $email, $login, $hash
+    $email, $login, $password
 ));
 
 $_SESSION['id_usuario'] = $pdo->lastInsertId();
