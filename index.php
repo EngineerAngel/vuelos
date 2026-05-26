@@ -1,3 +1,6 @@
+<?php
+$error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,6 +12,7 @@
 <center>
     <h1>SISTEMA DE RESERVACIONES DE VUELO</h1>
     <h3>Pantalla Principal (P-1)</h3>
+    <?php if ($error): ?><p style="color:red"><b><?= $error ?></b></p><?php endif; ?>
     
     <p>Servicios Ofrecidos:</p>
     <ul style="display: inline-block; text-align: left;">
