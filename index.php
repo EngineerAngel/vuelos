@@ -7,12 +7,13 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Reservaciones - Inicio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <center>
     <h1>SISTEMA DE RESERVACIONES DE VUELO</h1>
     <h3>Pantalla Principal (P-1)</h3>
-    <?php if ($error): ?><p style="color:red"><b><?= $error ?></b></p><?php endif; ?>
+    <?php if ($error): ?><p><b><?= $error ?></b></p><?php endif; ?>
     
     <p>Servicios Ofrecidos:</p>
     <ul style="display: inline-block; text-align: left;">
